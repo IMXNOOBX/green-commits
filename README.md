@@ -1,50 +1,46 @@
 # auto-green
 
-[![Build Status](https://github.com/justjavac/auto-green/workflows/ci/badge.svg?branch=master)](https://github.com/justjavac/auto-green/actions)
+[![Build Status](https://github.com/IMXNOOBX/auto-green/workflows/ci/badge.svg?branch=master)](https://github.com/IMXNOOBX/auto-green/actions)
 
-自动保持 GitHub 提交状态常绿。
+Automatically keep GitHub commit status evergreen.
 
 > a commit a day keeps your girlfriend away.
+##  Principle
+Use the timed task function of GitHub Actions to automatically execute `git commit` at regular intervals, and the submission information is "a commit a day keeps your girlfriend away", inspired by the question of Zhihu [ How to keep all green for 365 days on GitHub ? kind of experience? ](https://www.zhihu.com/question/34043434/answer/57826281) An anonymous user's answer:
 
-## 原理
+> It used to be all green for more than 200 days, but I left my girlfriend out, and it has been green until now.
+For the principle of Github Action, you can check the official document [ Introduction to Github Action ](https://docs.github.com/cn/actions/learn-github-actions/introduction-to-github-actions)
+##  use
 
-使用 GitHub Actions 的定时任务功能，每隔一段时间自动执行 `git commit`，提交信息为 "a commit a day keeps your girlfriend away"，灵感来自知乎问题[在 GitHub 上保持 365 天全绿是怎样一种体验？](https://www.zhihu.com/question/34043434/answer/57826281)下某匿名用户的回答：
+-Click the **Use this template** button in the upper right corner to copy this GitHub repository, ** : warning : Do not fork, because the dynamics of the fork project will not make you green : warning : **
+- Modify [ lines 7 and 8 of the ci.yml file ](https://github.com/justjavac/auto-green/blob/master/.github/workflows/ci.yml#L7-L8) to remove the preceding ` #` sign
+- Modify [ lines 19, 20 of the ci.yml file ](https://github.com/justjavac/auto-green/blob/master/.github/workflows/ci.yml#L19-L20) to your own GitHub Account and Nickname
+- (Optional) You can do this by modifying [ line 8 of the ci.yml file ](https://github.com/justjavac/auto-green/blob/master/.github/workflows/ci.yml#L8) Adjust frequency
 
-> 曾经保持了 200 多天全绿，但是冷落了女朋友，一直绿到现在。
-
-有关 Github Action 的原理，可查看官方文档 [Github Action 简介](https://docs.github.com/cn/actions/learn-github-actions/introduction-to-github-actions)
-
-## 使用
-
-- 点右上角 **Use this template** 按钮复制本 GitHub 仓库，**:warning: 千万不要 Fork，因为 fork 项目的动态并不会让你变绿 :warning:**
-- 修改 [ci.yml 文件的第 7、8 行](https://github.com/justjavac/auto-green/blob/master/.github/workflows/ci.yml#L7-L8) 去掉前面的 `#` 号
-- 修改 [ci.yml 文件的第 19、20 行](https://github.com/justjavac/auto-green/blob/master/.github/workflows/ci.yml#L19-L20) 为自己的 GitHub 账号和昵称
-- (可选) 你可以通过修改 [ci.yml 文件的第 8 行](https://github.com/justjavac/auto-green/blob/master/.github/workflows/ci.yml#L8)来调整频率
-
-计划任务语法有 5 个字段，中间用空格分隔，每个字段代表一个时间单位。
+The scheduled task syntax has 5 fields separated by spaces, each field representing a time unit.
 
 ```plain
-┌───────────── 分钟 (0 - 59)
-│ ┌───────────── 小时 (0 - 23)
-│ │ ┌───────────── 日 (1 - 31)
-│ │ │ ┌───────────── 月 (1 - 12 或 JAN-DEC)
-│ │ │ │ ┌───────────── 星期 (0 - 6 或 SUN-SAT)
+┌────────────── minutes (0 - 59)
+│ ┌────────────── Hours (0 - 23)
+│ │ ┌────────────── Day (1 - 31)
+│ │ │ ┌────────────── Month (1 - 12 or JAN-DEC)
+│ │ │ │ ┌────────────── Week of the week (0 - 6 or SUN-SAT)
 │ │ │ │ │
 │ │ │ │ │
 │ │ │ │ │
 * * * * *
 ```
 
-每个时间字段的含义：
+The meaning of each time field:
 
-|符号   | 描述        | 举例                                        |
+|symbol | description | example |
 | ----- | -----------| -------------------------------------------|
-| `*`   | 任意值      | `* * * * *` 每天每小时每分钟                  |
-| `,`   | 值分隔符    | `1,3,4,7 * * * *` 每小时的 1 3 4 7 分钟       |
-| `-`   | 范围       | `1-6 * * * *` 每小时的 1-6 分钟               |
-| `/`   | 每         | `*/15 * * * *` 每隔 15 分钟                  |
+| `*` | any value | `* * * * *` every hour every minute of every day |
+| `,` | value separator | `1,3,4,7 * * * *` hourly 1 3 4 7 minutes |
+| `-` | range | `1-6 * * * *` 1-6 minutes of every hour |
+| `/` | every | `*/15 * * * *` every 15 minutes |
 
-**注**：由于 GitHub Actions 的限制，如果设置为 `* * * * *` 实际的执行频率为每 5 分执行一次。
+**Note** : Due to the limitation of GitHub Actions, if set to `* * * * *` , the actual execution frequency is once every 5 minutes.
 
 ## License
 
