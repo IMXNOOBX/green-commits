@@ -5,6 +5,24 @@
 Automatically keep GitHub commit status evergreen.
 
 > a commit a day keeps your girlfriend away.
+
+
+# Whats New
+
+> Added EMAIL, USER secret, that way no one will be able to see ur email
+
+## use
+
+```ini
+1. Fork this repo or the official one
+2. Remove the # in line 7, 8
+3. Go to https://github.com/IMXNOOBX/auto-green/settings/secrets/actions 
+  3.1. Create a secret named EMAIL with your email
+  3.2. Create a scret named USER with your github username
+4. Enjoy the green Contribution Activity panel in your profile :D
+```
+
+
 ##  Principle
 Use the timed task function of GitHub Actions to automatically execute `git commit` at regular intervals, and the submission information is "a commit a day keeps your girlfriend away", inspired by the question of Zhihu [ How to keep all green for 365 days on GitHub ? kind of experience? ](https://www.zhihu.com/question/34043434/answer/57826281) An anonymous user's answer:
 
