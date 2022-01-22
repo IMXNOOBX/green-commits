@@ -13,7 +13,7 @@ Automatically keep GitHub commit status evergreen.
 
 ## use
 
-```sh
+```
 1. Fork this repo or the official one
 2. Remove the # in line 7, 8
 3. Go to https://github.com/IMXNOOBX/auto-green/settings/secrets/actions 
