@@ -24,7 +24,7 @@ Automatically keep GitHub commit status green.
   3.2. Create a scret named USER with your github username
 + Enjoy the green Contribution Activity panel in your profile :D
 ```
-
+u
 ## 📘 Developer Instructions
 
 -Click the **Use this template** button in the upper right corner to copy this GitHub repository
