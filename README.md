@@ -9,7 +9,7 @@ Automatically keep GitHub commit status green.
 
 # 📣 Whats New
 
-> Added EMAIL, USER secret, that way no one will be able to see ur email
+> Added EMAIL, NAME secret, that way no one will be able to see ur email
 
 ## 🌳 Simple Use
 
