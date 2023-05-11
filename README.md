@@ -21,7 +21,7 @@ Automatically keep GitHub commit status green.
 2. Remove the # in line 7, 8
 3. Go to https://github.com/yourGithubUsername/auto-green/settings/secrets/actions 
   3.1. Create a secret named EMAIL with your email
-  3.2. Create a scret named USER with your github username
+  3.2. Create a scret named NAME with your github username
 + Enjoy the green Contribution Activity panel in your profile :D
 ```
 
