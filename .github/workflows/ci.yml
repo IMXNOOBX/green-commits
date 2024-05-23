@@ -22,6 +22,7 @@ jobs:
       - name: Auto green
         run: |
           QUOTE=$(cat quote.txt)
+          rm quote.txt
           git config --local user.email "${{ secrets.EMAIL }}"
           git config --local user.name "${{ secrets.NAME }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
