@@ -1,10 +1,10 @@
 # 🧶 Green Commits
 
-[![Build Status](https://github.com/IMXNOOBX/green-commits/workflows/ci/badge.svg?branch=master)](https://github.com/IMXNOOBX/green-commits/actions)
+[![ci](https://github.com/IMXNOOBX/green-commits/actions/workflows/ci.yml/badge.svg)](https://github.com/IMXNOOBX/green-commits/actions/workflows/ci.yml)
 
 Automatically keep GitHub commit status green.
 
-> a commit a day keeps your girlfriend away. **changed to** a commit a day keeps your girlfriend from going away. 😢
+> Now the action will get a random quote from CW chapter titles defined in [`quotes.txt`](quotes.txt) and will run every moday & saturday
 
 
 # 📣 Whats New
