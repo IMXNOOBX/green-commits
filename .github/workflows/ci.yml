@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * 0,6" # Saturday & Mondays
+    - cron: "0 0 * * 0,6" # Mondays & Saturday at 00:00
 
 jobs:
   autogreen:
@@ -14,11 +14,17 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
 
+      - name: Get random quote
+        run: |
+          chmod +x get_random_quote.sh
+          ./get_quote.sh
+
       - name: Auto green
         run: |
-          git config --local user.email ${{ secrets.EMAIL }}
-          git config --local user.name ${{ secrets.NAME }}
+          QUOTE=$(cat quote.txt)
+          git config --local user.email "${{ secrets.EMAIL }}"
+          git config --local user.name "${{ secrets.NAME }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          git commit --allow-empty -m "a commit a day keeps your girlfriend from going away"
+          git commit --allow-empty -m "$QUOTE"
           git push
