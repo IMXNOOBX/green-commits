@@ -14,15 +14,9 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
 
-      - name: Get random quote
-        run: |
-          chmod +x get_quote.sh
-          ./get_quote.sh
-
       - name: Auto green
         run: |
-          QUOTE=$(cat quote.txt)
-          rm quote.txt
+          QUOTE=$(shuf -n 1 quotes.txt)
           git config --local user.email "${{ secrets.EMAIL }}"
           git config --local user.name "${{ secrets.NAME }}"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
