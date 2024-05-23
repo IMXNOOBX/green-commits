@@ -16,7 +16,7 @@ jobs:
 
       - name: Get random quote
         run: |
-          chmod +x get_random_quote.sh
+          chmod +x get_quote.sh
           ./get_quote.sh
 
       - name: Auto green
